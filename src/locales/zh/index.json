@@ -1,0 +1,12 @@
+{
+  "nav-home": "主页",
+  "nav-blog": "博文",
+  "nav-about": "关于",
+  "nav-globe": "切换语言",
+  "en": "English",
+  "zh": "中文",
+  "footer-github-info": "源代码: ",
+  "footer-gatsby-info": "网站搭建: ",
+  "footer-netlify-info": "托管于: ",
+  "placeholder-page-content": "网站建设中"
+}

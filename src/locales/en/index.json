@@ -1,0 +1,12 @@
+{
+  "nav-home": "Home",
+  "nav-blog": "Blog",
+  "nav-about": "About",
+  "nav-globe": "Language Switching",
+  "en": "English",
+  "zh": "中文",
+  "footer-github-info": "Source code on: ",
+  "footer-gatsby-info": "Build with: ",
+  "footer-netlify-info": "Hosted on: ",
+  "placeholder-page-content": "Will come soon!"
+}
