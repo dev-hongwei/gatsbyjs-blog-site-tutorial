@@ -55,6 +55,8 @@
   --color-nav-item-highlight: var(--dark-blue);
   --color-second-level-nav-item-background: white;
   --color-second-level-nav-item-bottom: var(--gray-3);
+  --color-highlight-code-line-background: #feb;
+  --color-highlight-code-line-border: #f99;
 
   /* Sizes */
   --space-small: 5px;
@@ -64,6 +66,7 @@
   --space-large: 20px;
   --space-large-negative: -20px;
 
+  /* // The available screen horizontal display area ratio, it must be same with javascript const: Consts.width_NavMoreItem */
   --width-content-container: 60vw;
 }
 
@@ -115,12 +118,12 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: var(--width-content-container);
+  width: 100%;
   margin: 0 auto;
 }
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 768px) {
   .layout-header-container {
-    width: 100%;
+    width: var(--width-content-container);
   }
 }
 /* Navigation */
@@ -182,9 +185,6 @@ a {
 .nav-item-more:hover {
   background-color: var(--color-nav-item-highlight);
 }
-.nav-item-more:hover .sub-nav-container {
-  display: block;
-}
 .sub-nav {
   padding: 0;
 }
@@ -239,12 +239,12 @@ a {
 .layout-main {
   flex-grow: 1;
   padding: 0 var(--space-large);
-  width: var(--width-content-container);
+  width: 100%;
   margin: 0 auto;
 }
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 768px) {
   .layout-main {
-    width: 100%;
+    width: var(--width-content-container);
   }
 }
 .layout-main ul {
@@ -309,15 +309,15 @@ a.post h3 {
 }
 
 a.post time {
-  display: block;
+  display: none;
   color: var(--post-time-color);
   font-size: 0.9rem;
   white-space: nowrap;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 768px) {
   a.post time {
-    display: none;
+    display: block;
   }
 }
 
