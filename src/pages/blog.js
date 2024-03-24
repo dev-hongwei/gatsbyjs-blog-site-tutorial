@@ -1,17 +1,26 @@
 // import react
-import React from 'react'
+import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
 import Layout from '../components/Layout'
+import BlogList from '../components/BlogList'
 
-// define blog page component
-const Blog = () => {
-  const { t } = useTranslation()
+const Blog = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
+  const simplifiedPosts = useMemo(() => {
+    return edges.map((post) => ({
+      id: post.node.id,
+      slug: post.node.fields.slug,
+      date: post.node.frontmatter.date,
+      title: post.node.frontmatter.title,
+    }))
+  }, [edges])
+
   return (
     <Layout>
-      <h1>
-        {t('nav-blog')}: {t('placeholder-page-content')}
-      </h1>
+      <BlogList data={simplifiedPosts} />
     </Layout>
   )
 }
@@ -27,6 +36,25 @@ export const query = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: {
+        fields: { category: { eq: "post" }, locale: { eq: $language } }
+      }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            date
+            title
+          }
         }
       }
     }

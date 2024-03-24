@@ -45,5 +45,33 @@ module.exports = {
         pages: [],
       },
     },
+
+    // markdown
+    {
+      // define from where to find the markdown files
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content`,
+        name: `content`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              //linkImagesToOriginal: false,
+              backgroundColor: 'transparent',
+            },
+          },
+          // `gatsby-remark-prismjs-copy-button`,
+          // `gatsby-remark-prismjs`,
+        ],
+      },
+    },
   ],
 }

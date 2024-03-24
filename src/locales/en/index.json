@@ -9,5 +9,6 @@
   "footer-github-info": "Source code on: ",
   "footer-gatsby-info": "Build with: ",
   "footer-netlify-info": "Hosted on: ",
-  "placeholder-page-content": "Will come soon!"
+  "placeholder-page-content": "Will come soon!",
+  "post-published-at": "Published at: "
 }

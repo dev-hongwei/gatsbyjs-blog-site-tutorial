@@ -9,5 +9,6 @@
   "footer-github-info": "源代码: ",
   "footer-gatsby-info": "网站搭建: ",
   "footer-netlify-info": "托管于: ",
-  "placeholder-page-content": "网站建设中"
+  "placeholder-page-content": "网站建设中",
+  "post-published-at": "发布时间: "
 }
